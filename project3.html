@@ -1,1 +1,173 @@
-project 3 description coming soon.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3: Pixel Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .btn-link {
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .highlight {
+            background-color: #f39c12;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #bdc3c7;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .section {
+            padding: 3rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            display: inline-block;
+        }
+
+        .navbar ul li .btn-link {
+            background-color: #1abc9c;
+        }
+
+        .navbar ul li .btn-link:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#overview" class="btn-link" onclick="highlightSection('overview')">Overview</a></li>
+                <li><a href="#structure" class="btn-link" onclick="highlightSection('structure')">Structure</a></li>
+                <li><a href="#features" class="btn-link" onclick="highlightSection('features')">Features</a></li>
+                <li><a href="#responsive" class="btn-link" onclick="highlightSection('responsive')">Responsive Design</a></li>
+                <li><a href="#challenges" class="btn-link" onclick="highlightSection('challenges')">Challenges</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Project 3: Pixel Game</h1>
+            <p>A retro-inspired space shooter where you battle meteors, enemy spaceships, and bosses.</p>
+            <a href="https://your-live-pixel-game-link.com" target="_blank" class="cta-button">Play the Game</a>
+        </div>
+    </header>
+
+    <section id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>This pixel-based space shooter game was built using vanilla JavaScript, HTML, and CSS. It features **player movement, shooting mechanics, enemy spawning, boss battles, and a leaderboard system**.</p>
+    </section>
+
+    <section id="structure" class="section">
+        <h2>1. Structure and Layout</h2>
+        <p>The game is contained within a `<div>` element styled as the game area. Inside this, various elements are dynamically generated, including the player, meteors, enemy spaceships, and bullets.</p>
+    </section>
+
+    <section id="features" class="section">
+        <h2>2. Key Features</h2>
+        <p>
+            - **Player Movement:** Left/Right Arrow Keys <br>
+            - **Shooting Mechanic:** Spacebar fires bullets <br>
+            - **Enemies & Boss Battles:** Meteors, enemy ships, and a final boss at **10,000 score** <br>
+            - **Health & Bonus Drops:** Players can collect health boosts and extra bullets <br>
+            - **Leaderboard System:** Submit scores and compete for the highest rank <br>
+        </p>
+    </section>
+
+    <section id="responsive" class="section">
+        <h2>3. Responsive Design</h2>
+        <p>The game runs smoothly on **desktop screens**, with touch-screen support in development. The UI elements adjust dynamically to different resolutions.</p>
+    </section>
+
+    <section id="challenges" class="section">
+        <h2>4. Challenges and Key Learnings</h2>
+        <p>Handling **collisions**, **enemy AI movement**, and **leaderboard integration** were major challenges. Through optimization and debugging, the game now supports **real-time interactions and scoring updates**.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nathan Willimack. <a href="https://your-live-pixel-game-link.com" target="_blank">Play Now</a></p>
+    </footer>
+
+    <script>
+        function highlightSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.add('highlight');
+            setTimeout(() => {
+                section.classList.remove('highlight');
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
