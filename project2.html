@@ -1,1 +1,173 @@
-project 2 description coming soon.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Time Genius</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .btn-link {
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .highlight {
+            background-color: #f39c12;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #bdc3c7;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .section {
+            padding: 3rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            display: inline-block;
+        }
+
+        .navbar ul li .btn-link {
+            background-color: #1abc9c;
+        }
+
+        .navbar ul li .btn-link:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#overview" class="btn-link" onclick="highlightSection('overview')">Overview</a></li>
+                <li><a href="#structure" class="btn-link" onclick="highlightSection('structure')">Structure</a></li>
+                <li><a href="#features" class="btn-link" onclick="highlightSection('features')">Features</a></li>
+                <li><a href="#responsive" class="btn-link" onclick="highlightSection('responsive')">Responsive Design</a></li>
+                <li><a href="#challenges" class="btn-link" onclick="highlightSection('challenges')">Challenges</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Project 2: Time Genius</h1>
+            <p>A streamlined scheduling solution designed to optimize time management and event planning.</p>
+            <a href="https://your-live-time-genius-link.com" target="_blank" class="cta-button">Visit the Site</a>
+        </div>
+    </header>
+
+    <section id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>Time Genius is a scheduling platform that allows users to plan events, manage availability, and track schedules in a user-friendly way. Built with modern web technologies, it offers seamless appointment booking and collaboration features.</p>
+    </section>
+
+    <section id="structure" class="section">
+        <h2>1. Structure and Layout</h2>
+        <p>The platform consists of a dynamic frontend built in React, an Express-based backend, and a MongoDB database. The user interface is designed for efficiency, providing intuitive scheduling options and calendar integration.</p>
+    </section>
+
+    <section id="features" class="section">
+        <h2>2. Key Features</h2>
+        <p>
+            - User authentication (Login/Signup) <br>
+            - Schedule meetings and events <br>
+            - Availability tracking & time slot suggestions <br>
+            - Responsive calendar view <br>
+            - Notifications & reminders for upcoming events
+        </p>
+    </section>
+
+    <section id="responsive" class="section">
+        <h2>3. Responsive Design</h2>
+        <p>The website adapts to all screen sizes with CSS media queries, ensuring smooth usability across mobile, tablet, and desktop devices.</p>
+    </section>
+
+    <section id="challenges" class="section">
+        <h2>4. Challenges and Key Learnings</h2>
+        <p>Integrating calendar synchronization and handling time zone differences were major challenges. Through extensive testing and refining the backend logic, these issues were resolved to improve user experience.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nathan Willimack. <a href="https://your-live-time-genius-link.com" target="_blank">Visit Website</a></p>
+    </footer>
+
+    <script>
+        function highlightSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.add('highlight');
+            setTimeout(() => {
+                section.classList.remove('highlight');
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
