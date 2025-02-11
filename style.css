@@ -405,3 +405,35 @@ a:hover {
         font-size: 1.8rem;
     }
 }
+
+.secondary-projects-heading {
+    font-size: 1.5em;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+}
+
+.secondary-project-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.secondary-project-button {
+    text-decoration: none;
+    color: #444;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 12px;
+    display: block;
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 70%;
+    margin: 10px auto;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-project-button:hover {
+    background-color: #e0e0e0;
+}
