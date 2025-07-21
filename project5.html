@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5: Weather Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .btn-link {
+            background-color: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .highlight {
+            background-color: #f39c12;
+            transition: background-color 0.5s ease;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #bdc3c7;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .section {
+            padding: 3rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            display: inline-block;
+        }
+
+        .navbar ul li .btn-link {
+            background-color: #1abc9c;
+        }
+
+        .navbar ul li .btn-link:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#overview" class="btn-link" onclick="highlightSection('overview')">Overview</a></li>
+                <li><a href="#structure" class="btn-link" onclick="highlightSection('structure')">Structure</a></li>
+                <li><a href="#features" class="btn-link" onclick="highlightSection('features')">Features</a></li>
+                <li><a href="#responsive" class="btn-link" onclick="highlightSection('responsive')">Responsive Design</a></li>
+                <li><a href="#challenges" class="btn-link" onclick="highlightSection('challenges')">Challenges</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Project 5: Weather Dashboard</h1>
+            <p>A simple weather app that displays current conditions using the OpenWeather API.</p>
+            <a href="https://example.com/weather" target="_blank" class="cta-button">Live Demo</a>
+        </div>
+    </header>
+
+    <section id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>Weather Dashboard provides real-time weather information for any city using the OpenWeatherMap API. It is built with vanilla JavaScript, HTML, and CSS.</p>
+    </section>
+
+    <section id="structure" class="section">
+        <h2>1. Structure and Layout</h2>
+        <p>The app has a search form and a results card on a single page. JavaScript fetches API data and updates the DOM elements to display weather details.</p>
+    </section>
+
+    <section id="features" class="section">
+        <h2>2. Key Features</h2>
+        <p>
+            - Search by city <br>
+            - Display temperature, humidity and wind speed <br>
+            - Show weather condition icons <br>
+            - Responsive layout for mobile and desktop
+        </p>
+    </section>
+
+    <section id="responsive" class="section">
+        <h2>3. Responsive Design</h2>
+        <p>Flexbox and media queries ensure the dashboard remains usable on phones, tablets, and desktops.</p>
+    </section>
+
+    <section id="challenges" class="section">
+        <h2>4. Challenges and Key Learnings</h2>
+        <p>Managing asynchronous API requests and handling errors for invalid searches were key challenges when building this project.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Nathan Willimack. <a href="https://example.com/weather" target="_blank">Live Demo</a></p>
+    </footer>
+
+    <script>
+        function highlightSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.add('highlight');
+            setTimeout(() => {
+                section.classList.remove('highlight');
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
