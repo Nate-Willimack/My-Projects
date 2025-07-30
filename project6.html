@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Project 6: Todo List App</title>
+<link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='style.css'>
+<style>
+    .btn-link {
+        background-color: #3498db;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-link:hover {
+        background-color: #2980b9;
+        transform: translateY(-3px);
+    }
+    .highlight {
+        background-color: #f39c12;
+        transition: background-color 0.5s ease;
+    }
+    .main-header {
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #1abc9c, #3498db);
+        color: white;
+    }
+    .header-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #ecf0f1;
+    }
+    .header-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #bdc3c7;
+    }
+    .cta-button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .cta-button:hover {
+        background-color: #c0392b;
+    }
+    .section {
+        padding: 3rem;
+    }
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+    }
+    .navbar ul li {
+        display: inline;
+    }
+    .navbar ul li a.btn-link {
+        display: inline-block;
+    }
+    footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+    }
+    footer a {
+        color: #3498db;
+        font-weight: bold;
+    }
+    footer a:hover {
+        color: #2980b9;
+    }
+    pre {
+        background-color: #f4f4f4;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+</style>
+</head>
+<body>
+<header class='main-header'>
+    <nav class='navbar'>
+        <ul>
+            <li><a href='#overview' class='btn-link' onclick="highlightSection('overview')">Overview</a></li>
+            <li><a href='#structure' class='btn-link' onclick="highlightSection('structure')">Structure</a></li>
+            <li><a href='#features' class='btn-link' onclick="highlightSection('features')">Features</a></li>
+            <li><a href='#code' class='btn-link' onclick="highlightSection('code')">Code</a></li>
+            <li><a href='#challenges' class='btn-link' onclick="highlightSection('challenges')">Challenges</a></li>
+        </ul>
+    </nav>
+    <div class='header-content'>
+        <h1>Project 6: Todo List App</h1>
+        <p>An interactive todo list application built with HTML, CSS, and vanilla JavaScript to help users manage tasks efficiently.</p>
+        <a href='#' class='cta-button'>Visit the Site</a>
+    </div>
+</header>
+<section id='overview' class='section'>
+    <h2>Project Overview</h2>
+    <p>This todo list app allows users to add, delete, and mark tasks as complete. It uses local storage to persist data across sessions.</p>
+</section>
+<section id='structure' class='section'>
+    <h2>1. Structure and Layout</h2>
+    <p>The app is composed of a header containing the input field and add button, a main section listing the tasks, and a footer showing the number of remaining tasks.</p>
+</section>
+<section id='features' class='section'>
+    <h2>2. Key Features</h2>
+    <p>- Add new tasks and display them in a list <br>
+    - Mark tasks as completed or delete them <br>
+    - Persist tasks using <code>localStorage</code> <br>
+    - Responsive layout that adapts to mobile and desktop screens</p>
+</section>
+<section id='code' class='section'>
+    <h2>3. Code Snippet</h2>
+    <p>The following snippet shows how tasks are added:</p>
+    <pre><code>// Todo List App - JavaScript Code Example
+const addButton = document.getElementById('add-btn');
+addButton.addEventListener('click', () => {
+    const input = document.getElementById('new-task');
+    const task = input.value.trim();
+    if (task !== '') {
+        addTaskToList(task);
+        input.value = '';
+    }
+});
+
+function addTaskToList(task) {
+    const li = document.createElement('li');
+    li.textContent = task;
+    document.getElementById('task-list').appendChild(li);
+}
+    </code></pre>
+    <p>Below is a screenshot of the code:</p>
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABYAPoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDgFVnYKoyTwBTlhkd1RV+ZhkZIGRRArtIRGQDtPPtjmrX2O43rJ5se9uB83t9PwqhFYW05XcIZCOP4aasTsAVUncSB9R1q4j3jTxwJcAllDAkYAyM+lTQ2M6kD7RGuDu+7uwcf/WoAzWikVN7IwUEDJHc8082twMfuXOQCMLnqM/yqzJbTtiOadOoAGM9AcHge1PlkvoYd7zowHbqcHj06UAZ1P8iUgERsQQDkDPFSJBJJOsPmLmTkndkf/rq2I76NhHHcJ6AL+Pt/+ugCj9nm27vKbB6cdaQQTN0ic9O3rz/Q1omC9wAbqHG0L97tzx0qGFbpblYopFLOq/MVyB8pwOnpkUAVPJl3hChDEbgDxxjOfypVtp2BKwuQADwvrVtbWbzQzzpvC9hu4Kn/AAx+NSQLev8A6q6VV2jlsDqOlIDPWGV03qhI3bePX0xSi2nYBhBIQehCmriW11CVxcRLltwIOSD69PpUyreKIQLoGNgq42j5d3bHfv8AlTAzGikVdzIcYBzjgZqOr0yTrbKZbjMb7SQBnGc9fypI9NleNX8yMBgCBnJ5oApUVbjsmctiVAFkCEn8s0w2xWSOMuuZMYxz19aAK9FOZSmM9xkU2gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q==" alt="Todo List Code Screenshot">
+</section>
+<section id='challenges' class='section'>
+    <h2>4. Challenges and Learnings</h2>
+    <p>Implementing data persistence with local storage and ensuring the application remained responsive across devices were key challenges. Through this project I strengthened my understanding of DOM manipulation and browser storage APIs.</p>
+</section>
+<footer class='footer'>
+    &copy; 2025 Nathan Willimack.
+</footer>
+<script>
+function highlightSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.add('highlight');
+    setTimeout(() => {
+        section.classList.remove('highlight');
+    }, 1000);
+}
+</script>
+</body>
+</html>
